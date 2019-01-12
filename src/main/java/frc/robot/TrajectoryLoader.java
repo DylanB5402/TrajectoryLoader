@@ -23,7 +23,10 @@ public class TrajectoryLoader {
         m_directory = new File(directoryFilePath);
         m_trajMap = new HashMap<>();
         for (File traj : m_directory.listFiles()) {
-            m_trajMap.put(traj.getName(), Pathfinder.readFromFile(traj));
+            if (traj.getName().contains(".traj")) {
+                m_trajMap.put(traj.getName(), Pathfinder.readFromFile(traj));
+            }
+            System.out.println(traj.getName());
         }
     }
 

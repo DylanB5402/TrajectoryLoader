@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import jaci.pathfinder.Trajectory;
+import frc.robot.TrajectoryLoader;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,8 +26,8 @@ public class Robot extends TimedRobot {
   TrajectoryLoader loader;
   @Override
   public void robotInit() {
-    loader = new TrajectoryLoader("/home/lvuser/deploy");
-    Trajectory traj = loader.getTrajectory("test");
+    loader = new TrajectoryLoader("home/lvuser/deploy");
+    Trajectory traj = loader.getTrajectory("test2");
     System.out.println(traj.get(0).x);
   }
 
